@@ -1,0 +1,89 @@
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/*header*/
+.header-bg {
+  background: grey;
+}
+
+.header-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: relative;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu li + li {
+  margin-left: 32px;
+}
+
+/*menu hamburguer*/
+.menu-hamburguer {
+  display: none;
+  padding: 15px;
+  background: url(/assets/cardapio.svg);
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
+@keyframes abrir-menu {
+  from {
+    padding: 0;
+  }
+
+  to {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: black;
+    color: white;
+    position: absolute;
+    right: 0;
+    left: 0;
+    padding: 30px;
+    top: 100%;
+  }
+
+  .menu li + li {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .menu-hamburguer {
+    display: block;
+    transition: all .4s;
+  }
+
+  input:checked ~ .menu-hamburguer {
+    transform: rotate(-90deg);
+  }
+
+  input:checked ~ .menu {
+    display: flex;
+    animation: abrir-menu .4s alternate;
+  }
+}
