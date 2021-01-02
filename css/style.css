@@ -57,7 +57,6 @@ input {
 
 @media (max-width: 760px) {
   .menu {
-    display: none;
     flex-direction: column;
     background: black;
     color: white;
@@ -65,7 +64,8 @@ input {
     right: 0;
     left: 0;
     padding: 30px;
-    top: 100%;
+    top: -1000%;
+    transition: all .4s;
   }
 
   .menu li + li {
@@ -83,7 +83,6 @@ input {
   }
 
   input:checked ~ .menu {
-    display: flex;
-    animation: abrir-menu .4s alternate;
+    top: 100%;
   }
 }
