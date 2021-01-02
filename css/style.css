@@ -36,9 +36,18 @@ ul {
 /*menu hamburguer*/
 .menu-hamburguer {
   display: none;
-  padding: 15px;
-  background: url(/assets/cardapio.svg);
-  cursor: pointer;
+  width: 30px;
+  height: 3px;
+  background: black;
+}
+
+.menu-hamburguer:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  background: black;
+  transition: all .4s;
 }
 
 input {
@@ -79,7 +88,13 @@ input {
   }
 
   input:checked ~ .menu-hamburguer {
-    transform: rotate(-90deg);
+    transform: rotate(-45deg);
+  }
+
+  input:checked ~ .menu-hamburguer:before {
+    display: flex;
+    transform: rotate(90deg);
+    width: 30px;
   }
 
   input:checked ~ .menu {
