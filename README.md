@@ -1,2 +1,2 @@
-# menu-hamburguer
- Menu hambúrguer apenas com CSS
+# Menu hambúrguer
+ Treinando CSS criando um menu hambúrguer responsivo.
